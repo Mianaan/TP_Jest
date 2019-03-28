@@ -35,10 +35,12 @@ Util.isPrime = function (n) {
     if (n < 0) {
         throw 'Unable to compute prime for n < 0'
     }
+    if (n > 100000) {
+        throw new Error('Unable to compute IsPrime for n > 100 000')
+    }
     for (var i = 2; i < n; i++)
         if (n % i === 0) return false;
     return true;
-
 };
 
 /**
@@ -51,7 +53,17 @@ Util.isPrime = function (n) {
  * @returns {number}
  */
 Util.sumPrime = function(n) {
-
+    if (n < 0) {
+        throw new Error('Unable to compute sumPrime for n < 0')
+    }
+    if (n > 100000) {
+        throw new Error('Unable to compute sumPrime for n > 100 000')
+    }
+    var sum = 0
+    for (var i = 2; i <= n; i++) {
+        if (Util.isPrime(i)) { sum = sum + i }
+    }
+    return sum
 };
 
 /**
