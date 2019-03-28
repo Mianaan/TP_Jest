@@ -43,8 +43,7 @@ class Interval {
      * @returns {boolean}
      */
     includes(interval) {
-
-    };
+    }
 
     /**
      * Retourne l'union de deux intervals
