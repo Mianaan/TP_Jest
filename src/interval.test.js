@@ -85,7 +85,7 @@ describe('Union', function () {
         [5, 10, 6, 9, [new Interval(5,10)]],
         [15, 20, 10, 30, [new Interval(10,30)]],
         [15, 15, 15, 15, [new Interval(15,15)]],
-        [5, 2, 3, 5, [new Interval(0,0)]],
+        [5, 2, 3, 5, [new Interval(3,5)]],
         [4, 8, 10, 16, [new Interval(4,8), new Interval(10, 16)]]
     ])(
 
