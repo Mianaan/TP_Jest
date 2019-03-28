@@ -82,18 +82,18 @@ describe('SumPrime', function () {
 });
 
 describe('FizzBuzz', function () {
+
     test('FizzBuzz of 1 is [1]', () => {
         expect(Util.fizzBuzz(1)).toEqual([1]);
     });
 
-    test('FizzBuzz deBuzz 1 => false', () => {
+    test('FizzBuzz on table of int from 1 to 15 is ', () => {
         expect(Util.fizzBuzz(15)).toEqual([1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]);
     });
 
-    test('FizzBuzz de 1 => false', () => {
+    test('FizzBuzz on table of int from 1 to 3 is', () => {
         expect(Util.fizzBuzz(3)).toEqual([1, 2, "Fizz"]);
     });
-
 
     test.each([
         [2, 2],
