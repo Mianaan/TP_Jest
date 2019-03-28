@@ -103,9 +103,9 @@ describe('Union', function () {
 
 describe('Intersection', function () {
     test.each([
-        [5, 10, 6, 9, [new Interval(6,9)]],
-        [15, 20, 10, 30, [new Interval(10,20)]],
-        [15, 15, 15, 15, [new Interval(15,15)]],
+        [5, 10, 6, 9, new Interval(6,9)],
+        [15, 20, 10, 30, new Interval(15,20)],
+        [15, 15, 15, 15, []],
         [5, 2, 3, 5, []],
         [4, 8, 10, 16, []]
     ])(
