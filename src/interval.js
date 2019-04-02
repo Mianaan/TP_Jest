@@ -5,7 +5,7 @@ class Interval {
     }
 
     toString() {
-        return "[" + this.start + "," + this.end + "]";
+        return `[${this.start},${this.end}]`;
     }
 
     /**
@@ -63,7 +63,10 @@ class Interval {
      * @returns {Interval[]}
      */
     union(interval) {
-
+        if (this.overlaps(interval))
+            return [new Interval(Math.min(this.start, interval.start),Math.max(this.end, interval.end))]
+        else
+            return [this, interval]
     };
 
     /**
@@ -83,7 +86,10 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
-
+        if (this.overlaps(interval))
+            return new Interval(Math.max(this.start, interval.start), Math.min(this.end, interval.end))
+        else
+            return []
     };
 
     /**
@@ -103,7 +109,12 @@ class Interval {
      * @returns {Interval[]}
      */
     exclusion(interval) {
-
+        if (this.overlaps(interval)) {
+            let inter = this.intersection(interval)
+            return [new Interval(Math.min(this.start, interval.start), inter.start),
+                new Interval(inter.end, Math.max(this.end, interval.end))]
+        }
+        else return [this, interval]
     };
 }
 
