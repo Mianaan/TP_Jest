@@ -33,7 +33,7 @@ Util.isPrime = function (n) {
         return false;
     }
     if (n < 0) {
-        throw 'Unable to compute IsPrime for n < 0'
+        throw new Error('Unable to compute IsPrime for n < 0')
     }
     if (n > 100000) {
         throw new Error('Unable to compute IsPrime for n > 100 000')
