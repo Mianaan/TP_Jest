@@ -54,10 +54,10 @@ Util.isPrime = function (n) {
  */
 Util.sumPrime = function(n) {
     if (n < 0) {
-        throw new Error('Unable to compute sumPrime for n < 0')
+        throw new Error('Unable to compute SumPrime for n < 0')
     }
     if (n > 100000) {
-        throw new Error('Unable to compute sumPrime for n > 100 000')
+        throw new Error('Unable to compute SumPrime for n > 100 000')
     }
     var sum = 0
     for (var i = 2; i <= n; i++) {

@@ -60,12 +60,12 @@ describe('SumPrime', function () {
         expect(Util.sumPrime(1)).toBe(0)
     });
 
-    test('SumPrime of x < 0 is throwing exception', () => {
-        expect(() => { Util.sumPrime(-10) }).toThrow('Unable to compute SumPrime for x < 0');
+    test('SumPrime of n < 0 is throwing exception', () => {
+        expect(() => { Util.sumPrime(-10) }).toThrow('Unable to compute SumPrime for n < 0');
     });
 
-    test('SumPrime of x > 100 000 is throwing exception', () => {
-        expect(() => { Util.sumPrime(500000) }).toThrow('Unable to compute SumPrime for x > 100 000');
+    test('SumPrime of n > 100 000 is throwing exception', () => {
+        expect(() => { Util.sumPrime(500000) }).toThrow('Unable to compute SumPrime for n > 100 000');
     });
 
     test.each([
