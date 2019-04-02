@@ -24,14 +24,14 @@ describe('Book repository Save', function () {
 describe('Book repository Get Total Items', function () {
     test('get total books', () => {
         let dbMock = {
-            get : jest.fn(),
-            size : jest.fn(),    //get books
-            value : jest.fn()
+            get : jest.fn(),    //get repo
+            size : jest.fn(),   //get size repo
+            value : jest.fn()   //return value of size
         };
 
-        dbMock.get.mockReturnValue(dbMock)
-        dbMock.size.mockReturnValue(dbMock)
-        dbMock.value.mockReturnValue(dbMock)
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.size.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(dbMock);
 
         const repository = new BookRepository(dbMock);
 
@@ -39,6 +39,28 @@ describe('Book repository Get Total Items', function () {
 
         //Count is execute 1 time
         expect(dbMock.size.mock.calls.length).toBe(1);
+
+    });
+});
+
+describe('Book repository Get Total Prices', function () {
+    test('get sum prices', () => {
+        let dbMock = {
+            get : jest.fn(),    //get repo
+            sumBy : jest.fn(),
+            value : jest.fn()
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.sumBy.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(dbMock);
+
+        const repository = new BookRepository(dbMock);
+
+        expect(repository.getTotalPrice()).toBe(dbMock);
+
+        //Count is execute 1 time
+        expect(dbMock.sumBy.mock.calls.length).toBe(1);
 
     });
 });
