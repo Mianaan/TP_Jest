@@ -65,3 +65,25 @@ describe('Book repository Get Total Prices', function () {
     });
 });
 
+describe('Book repository Get By Book Name', function () {
+    test('get by book name', () => {
+        let dbMock = {
+            get : jest.fn(),    //get repo
+            find: jest.fn(),
+            value: jest.fn()
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.find.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(dbMock);
+
+        const repository = new BookRepository(dbMock);
+
+        expect(repository.getBookByName()).toBe(dbMock);
+
+        //Count is execute 1 time
+        expect(dbMock.find.mock.calls.length).toBe(1);
+
+    });
+});
+
